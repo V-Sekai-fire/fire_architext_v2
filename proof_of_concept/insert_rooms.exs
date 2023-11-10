@@ -47,7 +47,7 @@ def to_jsonl(apartment_room) do
 
   conversation = %{
     from:
-      "Describe your ideal apartment. The apartment layout is #{apartment.apartment_layout}. This output provides a description of an apartment with a #{apartment.apartment_layout} layout along with its rooms. Each room is detailed by its type and coordinates using the 'Well-known Text' markup language for representing vector geometry objects on a map. The spatial relationship between rooms is also indicated, particularly if they are adjacent.",
+      "Describe your ideal apartment. The apartment layout is #{apartment.apartment_layout}. This output provides a description of an apartment with a #{apartment.apartment_layout} layout along with its rooms. Each room is detailed by its type and MULTIPOLYGON coordinates using the 'Well-known Text' markup language for representing vector geometry objects on a map. The spatial relationship between rooms is also indicated, particularly if they are adjacent.",
     value:
       "The apartment layout is #{apartment.apartment_layout}. \n#{Enum.join(room_descriptions, "\n")}"
   }
