@@ -47,9 +47,9 @@ def to_jsonl(apartment_room) do
 
   conversation = %{
     from:
-      "Describe your ideal apartment. The apartment layout is #{apartment.apartment_layout}. This output provides a description of an apartment with a #{apartment.apartment_layout} layout along with its rooms. Each room is detailed by its type and MULTIPOLYGON coordinates using the 'Well-known Text' markup language for representing vector geometry objects on a map. The spatial relationship between rooms is also indicated, particularly if they are adjacent.",
+      "Imagine an apartment that suits your lifestyle. The apartment layout is #{apartment.apartment_layout}. This output provides a detailed description of an apartment with a #{apartment.apartment_layout} layout along with its rooms. Each room is thoughtfully placed and designed to maximize space and functionality. The spatial relationship between rooms is also indicated, particularly if they are adjacent. In addition, each room's location is defined using the 'Well-known Text' (WKT) markup language for representing vector geometry objects on a map. In this syntax, a MULTIPOLYGON is represented as a ring of points that ends where it started.",
     value:
-      "The apartment layout is #{apartment.apartment_layout}. \n#{Enum.join(room_descriptions, "\n")}"
+      "The apartment layout is #{apartment.apartment_layout}.\n#{Enum.join(room_descriptions, "\n")}"
   }
 
   json = Jason.encode!(%{conversations: [conversation]})
